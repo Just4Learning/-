@@ -1,0 +1,382 @@
+{
+/* 
+	 // Place your snippets for Visual Basic here. Each snippet is defined under a snippet name and has a prefix, body and 
+	 // description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	 // $1, $2 for tab stops, ${id} and ${id:label} and ${1:label} for variables. Variables with the same id are connected.
+	 // Example:
+	 "Print to console": {
+		"prefix": "log",
+		"body": [
+			"console.log('$1');",
+			"$2"
+		],
+		"description": "Log output to console"
+	},
+
+*/
+    // DATA TYPES ===================================================
+    /*
+    Boolean
+    Integer
+    Long
+    Single
+    Double
+    Currency
+    Date
+    String
+    Object
+    Variant
+    */
+
+    "Boolean": {
+        "prefix": "Dimb",
+        "body": [
+            "Dim bol${1:bolName} As Boolean"
+        ],
+        "description": "Boolean declaration"
+    },
+    "Integer": {
+        "prefix": "Dimi",
+        "body": [
+            "Dim int${1:intName} As Integer"
+        ],
+        "description": "Integer declaration"
+    },
+    "Long": {
+        "prefix": "Diml",
+        "body": [
+            "Dim lng${1:lngName} As Long"
+        ],
+        "description": "Long declaration"
+    },
+    "Single": {
+        "prefix": "Dimsi",
+        "body": [
+            "Dim sng${1:sngName} As Single"
+        ],
+        "description": "Single declaration"
+    },
+    "Double": {
+        "prefix": "Dimd",
+        "body": [
+            "Dim dbl${1:dblName} As Double"
+        ],
+        "description": "Double declaration"
+    },
+    "Currency": {
+        "prefix": "Dimc",
+        "body": [
+            "Dim cur${1:curName} As Currency"
+        ],
+        "description": "Currency declaration"
+    },
+    "Date": {
+        "prefix": "Dimdt",
+        "body": [
+            "Dim dat${1:datName} As Date"
+        ],
+        "description": "Date declaration"
+    },
+    "String": {
+        "prefix": "Dims",
+        "body": [
+            "Dim str${1:strName} As String"
+        ],
+        "description": "String declaration"
+    },
+    "Object": {
+        "prefix": "Dimo",
+        "body": [
+            "Dim Obj_${1:Obj_Name} As Object"
+        ],
+        "description": "Object declaration"
+    },
+    "Variant": {
+        "prefix": "Dimv",
+        "body": [
+            "Dim var${1:varName} As Variant"
+        ],
+        "description": "Variant declaration"
+    },
+
+    /*
+    Workbook
+    Worksheet
+    */
+    "Workbook": {
+        "prefix": "Dimwb",
+        "body": [
+            "Dim Wb_${1:Wb_Name} As Workbook"
+        ],
+        "description": "Workbook"
+    },
+    "Worksheet": {
+        "prefix": "Dimws",
+        "body": [
+            "Dim Ws_${1:Ws_Name} As Worksheet"
+        ],
+        "description": "Worksheet"
+    },
+
+    // If Else ===================================================
+    "If...ElseIf...Else...": {
+        "prefix": "Ifelif",
+        "body": [
+            "If ${1:expression1} Then",
+            "    ",
+            "ElseIf ${2:expression2} Then",
+            "    ",
+            "Else",
+            "    ",
+            "End If"
+        ],
+        "description": "If...ElseIf...Else...code block"
+    },
+    "If...Else...": {
+        "prefix": "Ifel",
+        "body": [
+            "If ${1:expression1} Then",
+            "    ",
+            "Else",
+            "    ",
+            "End If"
+        ],
+        "description": "If...Else...code block"
+    },
+
+    // Loops ===================================================
+
+    // For Each ===================================================
+    "ForEach": {
+        "prefix": "ForE",
+        "body": [
+            "For Each ${1:element} In ${2:group} ",
+            "    ${2:statements}",
+            "Next ${1:element}"
+        ],
+        "description": "For Each code block"
+    },
+
+    // Do Loop ===================================================
+    "DoLoopw": {
+        "prefix": "DoLoopw",
+        "body": [
+            "Do",
+            "    ",
+            "Exit Do",
+            "    ",
+            "Loop While"
+        ],
+        "description": "Do Loop While code block"
+    },
+    // Do Loop ===================================================
+    "DoLoopu": {
+        "prefix": "DoLoopu",
+        "body": [
+            "Do",
+            "    ",
+            "    Exit Do",
+            "    ",
+            "Loop Until"
+        ],
+        "description": "Do Loop Until code block"
+    },
+    // Do While ===================================================
+    "DoWhile": {
+        "prefix": "DoWhile",
+        "body": [
+            "Do While ${1:condition}",
+            "    ${2:statements}",
+            "Loop"
+        ],
+        "description": "Do While Loop code block"
+    },
+
+    // Do Until ===================================================
+    "DoUntil": {
+        "prefix": "DoUntil",
+        "body": [
+            "Do Until ${1:condition}",
+            "    ",
+            "Loop"
+        ],
+        "description": "Do Until Loop code block"
+    },
+
+    // Select Case ===================================================
+    "Selectc": {
+        "prefix": "Selectc",
+        "body": [
+            "Select Case ${1:testexpression}",
+            "    Case ${2:expressionlist-n}",
+            "        ${3:statements-n}",
+            "    Case Else",
+            "        ${4:elsestatements}",
+            "End Select"
+        ],
+        "description": "Select Case code block"
+    },
+
+    // With...End With ===================================================
+    "With...End With": {
+        "prefix": "with",
+        "body": [
+            "With ${1:statements}",
+            "    ${2:statements}",
+            "End With"
+        ],
+        "description": "With...End With code block"
+    },
+
+    // Sub Function ===================================================
+    "Suberr": {
+        "prefix": "Suberr",
+        "body": [
+            "Sub ${1:SubName}()",
+            "    '// add declarations",
+            "    On Error GoTo catchError",
+            "exitSub:",
+            "    Exit Sub",
+            "catchError:",
+            "    '// add error handling",
+            "    GoTo exitSub",
+            "End Sub"
+        ],
+        "description": "Sub code block with error handling"
+    },
+    "Functionerr": {
+        "prefix": "Functionerr",
+        "body": [
+            "Function ${1:FunctionName}() As ${2:functionType}",
+            "    '// add declarations",
+            "    On Error GoTo catchError",
+            "exitFunction:",
+            "    Exit Function",
+            "catchError:",
+            "    '// add error handling",
+            "    GoTo exitFunction",
+            "End Function"
+        ],
+        "description": "Function code block with error handling"
+    },
+    "MsgBox": {
+        "prefix": "MsgBox",
+        "body": [
+            "MsgBox \"${1:msgPrompt}\", ${2:vbButtonType}, \"${3:msgTitle}\""
+        ],
+        "description": "Message box code block"
+    },
+    "Sub...": {
+        "prefix": "suba",
+        "body": [
+            "Sub ${1:SubName}()",
+            "    ${2:statements}",
+            "End Sub"
+        ],
+        "description": "Sub...End Sub"
+    },
+    "Function...": {
+        "prefix": "fun",
+        "body": [
+            "Function ${1:FunctionName}()",
+            "    ${2:statements}",
+            "End Function"
+        ],
+        "description": "Function...End Function"
+    }
+    "Private Sub...": {
+        "prefix": "prs",
+        "body": [
+            "Private Sub ${1:subname}()",
+            "    ${2:statements}",
+            "End Sub"
+        ],
+        "description": "Private Sub...End Sub"
+    },
+    "Private Function...": {
+        "prefix": "prf",
+        "body": [
+            "Private Function ${1:functionName}()",
+            "    ${2:statements}",
+            "End Function"
+        ],
+        "description": "Private Function...End Function"
+    },
+}
+
+
+// 下列为默认的代码段，复制自C:\Program Files\Microsoft VS Code\resources\app\extensions\vb\snippets\vb.json
+/* ------------------------------------------------------------
+
+	"For Next Loop": {
+		"prefix": "for",
+		"body": [
+			"For ${1:index} As ${2:ObjectType} = ${3:lower} To ${4:Upper}",
+			"\t$0",
+			"Next ${1:index}"
+		],
+		"description": "For Next Loop"
+	},
+	"For Each...Next": {
+		"prefix": "fore",
+		"body": [
+			"For Each ${1:Variable} As ${2:ObjectType} In ${3:Collection}",
+			"\t$0",
+			"Next"
+		],
+		"description": "For Each...Next"
+	},
+	"For i...Next i": {
+		"prefix": "fori",
+		"body": [
+			"For i As ${1:Integer} = ${2:Lower} To ${3:Upper}",
+			"\t$0",
+			"Next i"
+		],
+		"description": "For i...Next i"
+	},
+	"For j...Next j": {
+		"prefix": "forj",
+		"body": [
+			"For j As ${1:Integer} = ${2:Lower} To ${3:Upper}",
+			"\t$0",
+			"Next j"
+		],
+		"description": "For j...Next j"
+	},
+	"Public Function...": {
+		"prefix": "puf",
+		"body": [
+			"Public Function ${1:FunctionName}(${2:ParameterList}) As ${3:ReturnType}",
+			"\tTry",
+			"\t\t$0",
+			"\tCatch ex As Exception",
+			"\tEnd Try",
+			"\tReturn ${3:ReturnValue}",
+			"End Function"
+		],
+		"description": "Public Function..."
+	},
+	"Public Sub ...": {
+		"prefix": "pus",
+		"body": [
+			"Public Sub ${1:ProcedureName}(${2:ParameterList})",
+			"\tTry",
+			"\t\t$0",
+			"\tCatch ex As Exception",
+			"\tEnd Try",
+			"End Sub"
+		],
+		"description": "Public Sub ..."
+	},
+	"While ... End While": {
+		"prefix": "while",
+		"body": [
+			"While ${1:Boolean}",
+			"\t$0",
+			"End While"
+		],
+		"description": "While ... End While"
+	},
+
+------------------------------------------------------------ */
