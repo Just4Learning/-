@@ -1,0 +1,10 @@
+// 将设置放入此文件中以覆盖默认设置
+{
+    /* 控制字体系列。
+    "editor.fontFamily": "Consolas, 'Courier New', monospace", */
+    "editor.fontFamily": "DejaVu Sans Mono, 'Courier New', monospace",
+
+    /* 显示垂直标尺的列
+    "editor.rulers": [], */
+    "editor.rulers": [80],
+}
