@@ -1,0 +1,10 @@
+// 将键绑定放入此文件中以覆盖默认值
+[
+{ "key": "ctrl+right",            "command": "workbench.action.splitEditor" },
+{ "key": "ctrl+\\",               "command": "cursorWordEndRight",
+                                     "when": "editorTextFocus" },
+{ "key": "ctrl+/",                "command": "cursorWordStartLeft",
+                                     "when": "editorTextFocus" },
+{ "key": "ctrl+left",             "command": "editor.action.commentLine",
+                                     "when": "editorTextFocus && !editorReadonly" },
+]
