@@ -270,7 +270,9 @@
         "prefix": "suba",
         "body": [
             "Sub ${1:SubName}()",
+            "'Application.ScreenUpdating = False",
             "    ${2:statements}",
+            "'Application.ScreenUpdating = True"
             "End Sub"
         ],
         "description": "Sub...End Sub"
