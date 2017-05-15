@@ -10,5 +10,4 @@
 
   * [settings.json](https://github.com/Just4Learning/PrSetting/blob/master/VS%20Code/settings.json) 是用户设置文件，一般位于`C:\Users\用户名\AppData\Roaming\Code\User`<br />
 
-  * [Snippets](https://github.com/Just4Learning/PrSetting/tree/master/VS%20Code/Snippets) 保存关于`代码段`的相关文件，这些文件一般保存在`C:\Users\用户名\AppData\Roaming\Code\User\snippets`<br />
 
