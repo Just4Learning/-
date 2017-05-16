@@ -47,32 +47,32 @@ set diffexpr=MyDiff()
 
 
 function MyDiff()
-  let opt = '-a --binary '
-  if &diffopt =~ 'icase' | let opt = opt . '-i ' | endif
-  if &diffopt =~ 'iwhite' | let opt = opt . '-b ' | endif
-  let arg1 = v:fname_in
-  if arg1 =~ ' ' | let arg1 = '"' . arg1 . '"' | endif
-  let arg2 = v:fname_new
-  if arg2 =~ ' ' | let arg2 = '"' . arg2 . '"' | endif
-  let arg3 = v:fname_out
-  if arg3 =~ ' ' | let arg3 = '"' . arg3 . '"' | endif
-  if $VIMRUNTIME =~ ' '
-    if &sh =~ '\<cmd'
-      if empty(&shellxquote)
-        let l:shxq_sav = ''
-        set shellxquote&
-      endif
-      let cmd = '"' . $VIMRUNTIME . '\diff"'
-    else
-      let cmd = substitute($VIMRUNTIME, ' ', '" ', '') . '\diff"'
-    endif
-  else
-    let cmd = $VIMRUNTIME . '\diff'
-  endif
-  silent execute '!' . cmd . ' ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3
-  if exists('l:shxq_sav')
-    let &shellxquote=l:shxq_sav
-  endif
+	let opt = '-a --binary '
+	if &diffopt =~ 'icase' | let opt = opt . '-i ' | endif
+	if &diffopt =~ 'iwhite' | let opt = opt . '-b ' | endif
+	let arg1 = v:fname_in
+	if arg1 =~ ' ' | let arg1 = '"' . arg1 . '"' | endif
+	let arg2 = v:fname_new
+	if arg2 =~ ' ' | let arg2 = '"' . arg2 . '"' | endif
+	let arg3 = v:fname_out
+	if arg3 =~ ' ' | let arg3 = '"' . arg3 . '"' | endif
+	if $VIMRUNTIME =~ ' '
+		if &sh =~ '\<cmd'
+			if empty(&shellxquote)
+				let l:shxq_sav = ''
+				set shellxquote&
+			endif
+			let cmd = '"' . $VIMRUNTIME . '\diff"'
+		else
+			let cmd = substitute($VIMRUNTIME, ' ', '" ', '') . '\diff"'
+		endif
+	else
+		let cmd = $VIMRUNTIME . '\diff'
+	endif
+	silent execute '!' . cmd . ' ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3
+	if exists('l:shxq_sav')
+		let &shellxquote=l:shxq_sav
+	endif
 endfunction
 
 
@@ -94,12 +94,12 @@ func SetTitle() " 定义函数SetTitle，自动插入文件头
 "        call append(line("."),"# encoding: utf-8")
 "        call append(line(".")+1, "")
     else
-        call setline(1, "/*************************************************************************")
-        call append(line("."), "    > File Name: ".expand("%"))
-        call append(line(".")+1, "    > Author: ")
-        call append(line(".")+2, "    > Mail: ")
-        call append(line(".")+3, "    > Created Time: ".strftime("%c"))
-        call append(line(".")+4, " ************************************************************************/")
+        call setline(1, "/*==============================================================================")
+        call append(line("."), "* File Name: ".expand("%"))
+        call append(line(".")+1, "* Author: ")
+        call append(line(".")+2, "* Mail: ")
+        call append(line(".")+3, "* Created Time: ".strftime("%c"))
+        call append(line(".")+4, "==============================================================================*/")
         call append(line(".")+5, "")
     endif
 "    if expand("%:e") == 'cpp'
