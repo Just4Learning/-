@@ -10,4 +10,4 @@
 >>* [molokai.vim](https://github.com/Just4Learning/PrSetting/blob/master/GVim/vimfiles/colors/molokai.vim)<br />
 >>* [monokaicstm.vim](https://github.com/Just4Learning/PrSetting/blob/master/GVim/vimfiles/colors/monokaicstm.vim)<br />
 
-* [settings.json](https://github.com/Just4Learning/PrSetting/blob/master/VS%20Code/settings.json) 是用户设置文件，一般位于`C:\Users\用户名\AppData\Roaming\Code\User`<br />
+* [se--on](https://github.com/Just4Learning/PrSetting/blob/master/VS%20Code/settings.json) 是用户设置文件，一般位于`C:\Users\用户名\AppData\Roaming\Code\User`<br />
