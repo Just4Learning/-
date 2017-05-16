@@ -96,10 +96,6 @@ func SetTitle() " 定义函数SetTitle，自动插入文件头
     elseif &filetype == 'sh'
         call setline(1,"\#!/bin/bash")
         call append(line("."), "")
-"    elseif &filetype == 'ruby'
-"        call setline(1,"#!/usr/bin/env ruby")
-"        call append(line("."),"# encoding: utf-8")
-"        call append(line(".")+1, "")
     else
         call setline(1, "/*==============================================================================")
         call append(line("."), "* File Name: ".expand("%"))
