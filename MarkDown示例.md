@@ -1,7 +1,7 @@
 MarkDown简单示例
 ==
 
-#请对比查看源文件与显示效果
+# 请对比查看源文件与显示效果
 
 ## 1. 标题,井号(#)
 
@@ -128,15 +128,6 @@ MarkDown简单示例
 	 * 无序列表
 
 ##<a name="relative_post">相关文章</a>
-
-1. [目录](GitHelp.md)
-1. [安装及配置Git](01_GitInstall.md)
-1. [安装及配置TortoiseGit](02_TortoiseGit.md)
-1. [基本使用方法](03_Usage.md)
-1. [MarkDown示例](04_MarkDownDemo.md)
-1. [解决 TortoiseGit 诡异的 Bad file number 问题](05_BadFileNumber.md)
-1. [加入QQ群GitHub家园: 225932282](http://jq.qq.com/?_wv=1027&k=WHbwkD)
-
 
 
 
