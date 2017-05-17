@@ -4,10 +4,14 @@
     
     C:\Program Files\Microsoft VS Code\resources\app\extensions\vb\snippets\vb.json 中改 "pf" 为 "puf"，"prefix" 同理
 ### 其他说明：<br />
-  * [Snippets](https://github.com/Just4Learning/PrSetting/tree/master/VS%20Code/Snippets) 保存关于`代码段`的相关文件，这些文件一般保存在`C:\Users\用户名\AppData\Roaming\Code\User\snippets`<br />
-  
-  * [keybindings.json](https://github.com/Just4Learning/PrSetting/blob/master/VS%20Code/keybindings.json) 是自定义的键盘快捷方式设置文件，一般位于`C:\Users\用户名\AppData\Roaming\Code\User`<br />
+* [Snippets](https://github.com/Just4Learning/PrSetting/tree/master/VS%20Code/Snippets) 保存关于`代码段`的相关文件，这些文件一般保存在`C:\Users\用户名\AppData\Roaming\Code\User\snippets`<br />
+>>* [c.json](https://github.com/Just4Learning/PrSetting/blob/master/VS%20Code/Snippets/c.json)<br />
+>>* [markdown.json](https://github.com/Just4Learning/PrSetting/blob/master/VS%20Code/Snippets/markdown.json)<br />
+>>* [python.json](https://github.com/Just4Learning/PrSetting/blob/master/VS%20Code/Snippets/python.json)<br />
+>>* [vb.json](https://github.com/Just4Learning/PrSetting/blob/master/VS%20Code/Snippets/vb.json)<br />
 
-  * [settings.json](https://github.com/Just4Learning/PrSetting/blob/master/VS%20Code/settings.json) 是用户设置文件，一般位于`C:\Users\用户名\AppData\Roaming\Code\User`<br />
+* [keybindings.json](https://github.com/Just4Learning/PrSetting/blob/master/VS%20Code/keybindings.json) 是自定义的键盘快捷方式设置文件，一般位于`C:\Users\用户名\AppData\Roaming\Code\User`<br />
+
+* [settings.json](https://github.com/Just4Learning/PrSetting/blob/master/VS%20Code/settings.json) 是用户设置文件，一般位于`C:\Users\用户名\AppData\Roaming\Code\User`<br />
 
 
