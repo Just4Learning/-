@@ -1,4 +1,4 @@
-set nocompatible         "关闭vi兼容
+set nocompatible         " 关闭vi兼容
 source $VIMRUNTIME/vimrc_example.vim
 source $VIMRUNTIME/mswin.vim
 behave mswin
@@ -6,42 +6,71 @@ behave mswin
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 基本设置
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set shortmess=atI "启动时不显示援助乌干达儿童的提示
+" < 界面配置 >
+set shortmess=atI " 启动时不显示援助乌干达儿童的提示
 set number
-syntax enable "语法高亮
+syntax enable  " 语法高亮
+set cursorline " 高亮光标所在行
 colorscheme monokaicstm " monokaicstm/molokai/python/github等
-winpos 0 0
-set lines=52 columns=86
-set cmdheight=1 " 命令行(在状态行下)的高度，默认为1
+set guifont=DejaVu\ Sans\ Mono:h11  " 控制字体系列&字号
+set guifontwide=YouYuan:h11:cGB2312 " 控制字体系列&字号
+winpos 0 0                          " 窗口初始位置及大小
+set lines=52 columns=86             " 窗口大小
+set cmdheight=1 " 命令行(在状态行下)的高度,默认为1
 
+" < 编码配置 >
 set encoding=utf-8 " 设置当前字符编码为 UTF-8.
 set fileencodings=ucs-bom,utf-8,chinese,latin-1,gbk,cp936,big5,gb2312,euc-jp,euc-kr " 设置编码的自动识别
 set fileencoding=utf-8
-
 source $VIMRUNTIME/delmenu.vim " 解决consle输出乱码
 source $VIMRUNTIME/menu.vim    " 解决consle输出乱码
 language messages zh_CN.utf-8  " 解决菜单乱码.使用中文提示信息, 并使用 UTF-8 编码. 如果没有这句的话, 在非 UTF-8 的系统, 如 Windows 下, 用了 UTF-8 的 encoding 后系统提示会乱码.
-set ambiwidth=double       " 防止特殊符号无法正常显示. 在 Unicode 中, 许多来自不同语言的字符, 如果字型足够近似的话, 会把它们放在同一个编码中. 但在不同编码中, 字符的宽度是不一样的. 例如中文汉语拼音中的 ā 就很宽, 而欧洲语言中同样的字符就很窄. 当 VIM 工作在 Unicode 状态时, 遇到这些宽度不明的字符时, 默认使用窄字符, 这会导致中文的破折号“——”非常短, 五角星“★”等符号只能显示一半. 因此, 我们需要设置 ambiwidth=double 来解决这个问题.
-filetype plugin indent on  " 开启文件类型自动识别, 启用文件类型插件, 启用针对文件类型的自动缩进.
-set guifont=DejaVu\ Sans\ Mono:h11  " 控制字体系列&字号
-set guifontwide=YouYuan:h11:cGB2312 " 控制字体系列&字号
-set nobackup    "不生成备份文件
+
+set ambiwidth=double  " 防止特殊符号无法正常显示. 在 Unicode 中, 许多来自不同语言的字符, 如果字型足够近似的话, 会把它们放在同一个编码中. 但在不同编码中, 字符的宽度是不一样的. 例如中文汉语拼音中的 ā 就很宽, 而欧洲语言中同样的字符就很窄. 当 VIM 工作在 Unicode 状态时, 遇到这些宽度不明的字符时, 默认使用窄字符, 这会导致中文的破折号“——”非常短, 五角星“★”等符号只能显示一半. 因此, 我们需要设置 ambiwidth=double 来解决这个问题.
+set writebackup " 保存文件前建立备份,保存成功后删除该备份
+set nobackup    " 不生成备份文件
 set noswapfile  " 关闭交换文件
 set ruler       " 显示标尺
 set history=857 " 历史记录数
-set undodir=~/.undodir  " undofile统一写入~/.undodir里面，不会四处分散了
+set undodir=~/.undodir  " undofile统一写入~/.undodir里面,不会四处分散了
+
+" < 隐藏菜单栏、工具栏等,可以通过F2切换 >
+set guioptions-=m " 隐藏菜单栏
+set guioptions-=T " 隐藏工具栏
+set guioptions-=r " 隐藏滚动条
+set guioptions-=L " 隐藏??
+nmap <silent> <F2> :if &guioptions =~# 'm' <Bar>
+    \set guioptions-=m <Bar>
+    \set guioptions-=T <Bar>
+    \set guioptions-=r <Bar>
+    \set guioptions-=L <Bar>
+\else <Bar>
+    \set guioptions+=m <Bar>
+    \set guioptions+=T <Bar>
+    \set guioptions+=r <Bar>
+    \set guioptions+=L <Bar>
+\endif<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 文本编辑设置
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set foldmethod=syntax " 自动语法折叠, "manual"为手动折叠
+filetype on                " 启用文件类型侦测
+filetype plugin on         " 针对不同的文件类型加载对应的插件
+filetype plugin indent on  " 开启文件类型自动识别, 启用文件类型插件, 启用针对文件类型的自动缩进.
+set foldmethod=syntax      " 自动语法折叠, "manual"为手动折叠
 set shiftwidth=4  " 自动缩进的时候, 缩进尺寸为4个空格.
 set tabstop=4     " Tab宽度为4个字符.
 set expandtab     " 编辑时将所有 Tab 替换为空格.  该选项只在编辑时将 Tab 替换为空格, 如果打开一个已经存在的文件, 并不会将已有的 Tab 替换为空格. 如果希望进行这样的替换的话, 可以使用这条命令“:retab”.
-set smarttab  " 当使用 et 将 Tab 替换为空格之后, 按下一个 Tab 就能插入 4 个空格, 但要想删除这 4 个空格, 就得按 4 下 Backspace. 设置 smarttab 之后, 就可以只按一下 Backspace 就删 4 个空格了.
-"set spell    " 打开拼写检查. 拼写有错的单词下方会有红色波浪线, 将光标放在单词上, 按 z= 就会出现拼写建议, 按 ]s 可以直接跳到下一个拼写错误处.
-set showmatch   " 高亮显示匹配的括号
-set matchtime=3 " 匹配括号高亮的时间(单位:0.1s)
+set smarttab      " 当使用 et 将 Tab 替换为空格之后, 按下一个 Tab 就能插入 4 个空格, 但要想删除这 4 个空格, 就得按 4 下 Backspace. 设置 smarttab 之后, 就可以只按一下 Backspace 就删 4 个空格了.
+"set spell        " 打开拼写检查. 拼写有错的单词下方会有红色波浪线, 将光标放在单词上, 按 z= 就会出现拼写建议, 按 ]s 可以直接跳到下一个拼写错误处.
+set showmatch     " 高亮显示匹配的括号
+set matchtime=3   " 匹配括号高亮的时间(单位:0.1s)
+
+" < 插入模式下光标移动 >
+imap <c-k> <Up>     " 插入模式下光标向上移动
+imap <c-j> <Down>   " 插入模式下光标向下移动
+imap <c-h> <Left>   " 插入模式下光标向左移动
+imap <c-l> <Right>  " 插入模式下光标向右移动
 
 set diffexpr=MyDiff()
 
@@ -77,17 +106,17 @@ endfunction
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" 新建文件，自动插入文件头
+" 新建文件,自动插入文件头
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 autocmd BufNewFile *.py,*.cpp,*.[ch],*.sh,*.java exec ":call SetTitle()"
 
-func SetTitle() " 定义函数SetTitle，自动插入文件头
+func SetTitle() " 定义函数SetTitle,自动插入文件头
     if &filetype == 'python'
         call setline(1,"#!/usr/bin/env python")
         call append(line("."),"# -*- coding: utf-8 -*-")
         call append(line(".")+1, "")
         call append(line(".")+2, "\# ==============================================================================")
-        call append(line(".")+3, "\# File Name: ".expand("%"))
+        call append(line(".")+3, "\# File Name: ".expand("%:t")) " 原来为：.expand("%"))
         call append(line(".")+4, "\# Author: 1D3A 0125")
         call append(line(".")+5, "\# Mail: ********@foxmail.com")
         call append(line(".")+6, "\# Created Time: ".strftime("%c"))
@@ -96,14 +125,14 @@ func SetTitle() " 定义函数SetTitle，自动插入文件头
     elseif &filetype == 'sh'
         call setline(1,"\#!/bin/bash")
         call append(line("."), "")
-    else
+    els
         call setline(1, "/*==============================================================================")
-        call append(line("."), "* File Name: ".expand("%"))
+        call append(line("."), "* File Name: ".expand("%:t")) " 原来为：.expand("%"))
         call append(line(".")+1, "* Author: 1D3A 0125")
         call append(line(".")+2, "* Mail: ********@foxmail.com")
         call append(line(".")+3, "* Created Time: ".strftime("%c"))
         call append(line(".")+4, "==============================================================================*/")
-        call append(line(".")+5, "")
+        call append(line(".")+5, "")：
     endif
     if expand("%:e") == 'cpp'
         call append(line(".")+6, "#include <iostream>")
@@ -125,5 +154,5 @@ func SetTitle() " 定义函数SetTitle，自动插入文件头
     endif
 endfunc
 
-autocmd BufNewFile * normal G  " 新建文件后，自动定位到文件末尾
-" 新建文件，自动插入文件头""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+autocmd BufNewFile * normal G  " 新建文件后,自动定位到文件末尾
+" 新建文件,自动插入文件头""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
