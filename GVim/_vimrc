@@ -125,14 +125,14 @@ func SetTitle() " 定义函数SetTitle,自动插入文件头
     elseif &filetype == 'sh'
         call setline(1,"\#!/bin/bash")
         call append(line("."), "")
-    els
+    else
         call setline(1, "/*==============================================================================")
         call append(line("."), "* File Name: ".expand("%:t")) " 原来为：.expand("%"))
         call append(line(".")+1, "* Author: 1D3A 0125")
         call append(line(".")+2, "* Mail: ********@foxmail.com")
         call append(line(".")+3, "* Created Time: ".strftime("%c"))
         call append(line(".")+4, "==============================================================================*/")
-        call append(line(".")+5, "")：
+        call append(line(".")+5, "")
     endif
     if expand("%:e") == 'cpp'
         call append(line(".")+6, "#include <iostream>")
