@@ -50,6 +50,10 @@ nmap <silent> <F2> :if &guioptions =~# 'm' <Bar>
     \set guioptions+=r <Bar>
     \set guioptions+=L <Bar>
 \endif<CR>
+
+" < _vimrc 文件相关设置 >
+map <silent> <leader>ss :source $VIM/_vimrc<CR>
+map <silent> <leader>ee :e $VIM/_vimrc<CR>
 " 基本设置""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -84,15 +88,9 @@ call vundle#begin('$VIMRUNTIME/bundle/') " vundle 管理的插件列表必须位
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
-Plugin 'vim-scripts/winmanager'
 call vundle#end() " 插件列表结束
 filetype on
 
-" < winmanager配置文件 >
-let g:winManagerWindowLayout = "TagList|FileExplorer" " 设置界面分割
-let g:winManagerWidth = 60 "设置winmanager的宽度，默认为25
-nmap <silent> <F7> :WMToggle<cr> "定义打开关闭winmanager快捷键为F8
-let g:AutoOpenWinManager = 1 "在进入vim时自动打开winmanager
 " 插件管理""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
