@@ -50,6 +50,7 @@ nmap <silent> <F2> :if &guioptions =~# 'm' <Bar>
     \set guioptions+=r <Bar>
     \set guioptions+=L <Bar>
 \endif<CR>
+" 基本设置""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 文本编辑设置
@@ -71,10 +72,33 @@ imap <c-k> <Up>
 imap <c-j> <Down>
 imap <c-h> <Left>
 imap <c-l> <Right>
+" 文本编辑设置""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" 插件管理
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" < vundle 配置文件 >
+filetype off
+set rtp+=$VIMRUNTIME/bundle/Vundle.vim/  " 此处规定Vundle的路径
+call vundle#begin('$VIMRUNTIME/bundle/') " vundle 管理的插件列表必须位于 vundle#begin() 和 vundle#end() 之间
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/nerdtree'
+Plugin 'vim-scripts/winmanager'
+call vundle#end() " 插件列表结束
+filetype on
+
+" < winmanager配置文件 >
+let g:winManagerWindowLayout = "TagList|FileExplorer" " 设置界面分割
+let g:winManagerWidth = 60 "设置winmanager的宽度，默认为25
+nmap <silent> <F7> :WMToggle<cr> "定义打开关闭winmanager快捷键为F8
+let g:AutoOpenWinManager = 1 "在进入vim时自动打开winmanager
+" 插件管理""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" 默认的设置，默认的函数
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set diffexpr=MyDiff()
-
-
 function MyDiff()
     let opt = '-a --binary '
     if &diffopt =~ 'icase' | let opt = opt . '-i ' | endif
@@ -103,7 +127,7 @@ function MyDiff()
         let &shellxquote=l:shxq_sav
     endif
 endfunction
-
+" 默认的设置，默认的函数""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 新建文件,自动插入文件头
