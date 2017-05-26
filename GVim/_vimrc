@@ -23,6 +23,7 @@ set cmdheight=1 " 命令行(在状态行下)的高度,默认为1
 set encoding=utf-8 " 设置当前字符编码为 UTF-8.
 set fileencodings=ucs-bom,utf-8,chinese,latin-1,gbk,cp936,big5,gb2312,euc-jp,euc-kr " 设置编码的自动识别
 set fileencoding=utf-8
+set nobomb " 去掉BOM标记
 source $VIMRUNTIME/delmenu.vim " 解决consle输出乱码
 source $VIMRUNTIME/menu.vim    " 解决consle输出乱码
 language messages zh_CN.utf-8  " 解决菜单乱码.使用中文提示信息, 并使用 UTF-8 编码. 如果没有这句的话, 在非 UTF-8 的系统, 如 Windows 下, 用了 UTF-8 的 encoding 后系统提示会乱码.
