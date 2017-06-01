@@ -99,6 +99,9 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 call vundle#end() " 插件列表结束
 filetype on
+
+" <--- packadd 命令启用、安装插件 --->
+packadd! matchit
 " 插件管理======================================================================
 
 "===============================================================================
